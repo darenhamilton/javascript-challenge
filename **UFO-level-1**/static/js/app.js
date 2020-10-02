@@ -17,10 +17,12 @@ data.forEach((ufoSighting) => {
 var button = d3.select("#filter-btn");
 button.on("click", function() {
     
-  // Prevent the page from refreshing
-  d3.event.preventDefault()
-    
+   // Prevent the page from refreshing
+  d3.event.preventDefault(),  
+  
   tbody.html("");
+
+  
 
     // Select the input date get the
     var inputElement = d3.select("#datetime");
