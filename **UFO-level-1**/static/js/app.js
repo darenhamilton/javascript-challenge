@@ -35,7 +35,7 @@ const runEnter = () => {
 
     // Append one table row for each object
     let row = tbody.append("tr");
-    // Use `Object.entries` to console.log each UFO Sighting value
+    // console log  values
     Object.entries(selections).forEach(function([key, value]) {
         // Append a cell to the row for each value
         let cell = row.append("td");
