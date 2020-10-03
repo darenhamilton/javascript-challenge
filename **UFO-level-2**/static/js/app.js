@@ -29,11 +29,13 @@ const runEnter = () => {
   
 
     // Select the input date get the
-    var inputElement = d3.selectAll("input");
+    let inputElement = d3.selectAll("#datetime");
+    let inputCity = d3.selectAll("#city");
     
 
     // Get the value property of the input date, state, shape
     let inputValue = inputElement.property("value");
+    let outputCity = inputCity.property("value");
     
     // Filter Data with datetime equal to input value
     let filteredData = tableData.filter(ufoSighting => ufoSighting.datetime === inputValue || 
