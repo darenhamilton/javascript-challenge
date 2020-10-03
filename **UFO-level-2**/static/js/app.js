@@ -29,21 +29,27 @@ const runEnter = () => {
   
 
     // Select the input date get the
-    var inputElement = d3.select("#datetime");
+    var inputElement = d3.selectAll("input");
+    
+
     // Get the value property of the input date, state, shape
-    var inputValue = inputElement.property("value");
+    let inputValue = inputElement.property("value");
     
     // Filter Data with datetime equal to input value
-    var filteredData = tableData.filter(ufoSighting => ufoSighting.datetime === inputValue);
-    
+    let filteredData = tableData.filter(ufoSighting => ufoSighting.datetime === inputValue || 
+                                                       ufoSighting.city === inputValue || 
+                                                       ufoSighting.state === inputValue || 
+                                                       ufoSighting.country === inputValue || 
+                                                       ufoSighting.shape === inputValue);
+    console.log(filteredData);
     filteredData.forEach(function(selections) {
 
     // Append one table row for each object
-    var row = tbody.append("tr");
-    // Use `Object.entries` to console.log each UFO Sighting value
+    let row = tbody.append("tr");
+
     Object.entries(selections).forEach(function([key, value]) {
         // Append a cell to the row for each value
-        var cell = row.append("td");
+        let cell = row.append("td");
         cell.text(value);
     });
 });
